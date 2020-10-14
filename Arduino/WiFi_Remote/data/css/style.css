@@ -1,0 +1,128 @@
+body 
+{
+  background-image: url("bg.png");
+  background-repeat: all;
+  background-color: #1c1c1c;
+}
+
+#controller 
+{
+  margin: 60px auto;
+  width: 190px;
+  height:700px;
+  background: #000;
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#131313), color-stop(0%,#111111), color-stop(0%,#1c1c1c), color-stop(8%,#666666), color-stop(50%,#a59393), color-stop(92%,#595959), color-stop(100%,#000000), color-stop(100%,#4c4c4c));
+  border: 1px solid transparent;
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px #222;
+  padding: 30px;
+  font-family: sans-serif;
+  color: #eee;
+}
+
+#footer
+{
+    font-family: "Verdana", Courier, monospace;
+  text-align: center;
+  margin: 30px 0;
+  font-size: 0.8em;
+  color: #1c1c1c;
+  text-shadow:0 1px 0 #3c3c3c;
+}
+
+.controls {
+  position:relative;
+}
+
+.row
+{
+	display: block;
+	text-align: center;
+	clear: both;
+}
+
+.rowClear
+{
+    position: fixed; 
+    background:gray; 
+    width:100%;
+    bottom:0;
+}
+
+.display
+{
+  clear: both;
+  width: 100%;
+  height: 20px;
+  padding: 10px 0;
+  background: #222;
+  box-shadow: inset 2px 0 11px #000;
+  border-radius: 5px 5px 0;
+  text-align:center;
+  /*color: #48D1CC;*/
+  color: #FFF;
+  font-size: 12px;
+  text-shadow: 0 0 5px #FFFACD;
+  font-family: monospace;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 18px; 
+}
+
+.button > i
+{
+  /*margin: 20px;*/
+  padding: 11px;
+}
+
+.button
+{
+  float: left;
+  margin: 10px 10px 20px;
+  background: #303131;
+  width: 40px;
+  height: 40px;
+  border-radius: 30px;
+  border: 1px solid #000;
+  text-align: center;
+  position: relative;
+  box-shadow:0 0 5px #000, inset 0 0 20px #000;
+}
+
+.buttonPlaceholder
+{
+  float: left;
+  margin: 10px 10px 20px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  position: relative;
+}
+
+.button:hover 
+{
+  box-shadow:0 0 1px #000, inset 0 0 9px #000;
+}
+
+ins > span 
+{
+  position: absolute;
+  font-size: 9px;
+  left: 0; top:-20px;
+  color: #888;
+  width: 34px;
+  color: #fff;
+  font-weight: bold;
+  padding: 3px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.red {
+  background: red!important; 
+}
+
+.blue 
+{
+  background: azure!important;
+}

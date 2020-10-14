@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="apple-mobile-web-app-title" content="WiFi Remote">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="icon" href="icon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="128x128" href="icon/apple-touch-icon-120x120.png">
+    <title>WiFi Remote - Sasa Karanovic</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/all.min.css">
+  </head>
+  <body>
+<div id="controller">
+  <div class="controls">
+      <ins class="button red" onClick="sendButtonPress('pwr', 'Power');"><i class="fas fa-power-off"></i><span>POWER</span></ins>
+    
+    <div class="rowClear"></div>
+    
+    <div class="row">
+      <ins class="buttonPlaceholder"></ins>
+      <ins class="button" onClick="sendButtonPress('up', 'Up');"><i class="fas fa-angle-up"></i><span>UP</span></ins>
+      <ins class="buttonPlaceholder"></ins>
+    </div>
+    <div class="row">
+      <ins class="button" onClick="sendButtonPress('left', 'Left');"><i class="fas fa-angle-left"></i><span>Left</span></ins>
+      <ins class="button" onClick="sendButtonPress('ok', 'OK');"><i class="far fa-dot-circle"></i><span>OK</span></ins>
+      <ins class="button" onClick="sendButtonPress('right', 'Right');"><i class="fas fa-angle-right"></i><span>Right</span></ins>
+    </div>
+    <div class="row">
+      <ins class="buttonPlaceholder"></ins>
+      <ins class="button" onClick="sendButtonPress('down', 'Down');"><i class="fas fa-angle-down"></i><span>Down</span></ins>
+      <ins class="buttonPlaceholder"></ins>
+    </div>
+
+    <div class="rowClear"></div>
+
+    <div class="row">
+      <ins class="button" onClick="sendButtonPress('back', 'Back');"><i class="fas fa-arrow-circle-left"></i><span>Back</span></ins>
+      <ins class="button" onClick="sendButtonPress('home', 'Home');"><i class="fas fa-home"></i><span>Home</span></ins>
+      <ins class="button" onClick="sendButtonPress('play', 'Play');"><i class="far fa-play-circle"></i><span>Play</span></ins>
+    </div>
+
+    <div class="rowClear"></div>
+
+    <div class="row">
+      <ins class="button" onClick="sendButtonPress('volup', 'Volume Up');"><i class="fas fa-volume-up"></i><span>Vol +</span></ins>
+      <ins class="buttonPlaceholder"></ins>
+      <ins class="button" onClick="sendButtonPress('chup', 'Channel +');"><i class="fas fa-plus"></i><span>CH +</span></ins>
+    </div>
+
+    <div class="row">
+      <ins class="button" onClick="sendButtonPress('volmute', 'Mute');"><i class="fas fa-volume-mute"></i><span>Mute</span></ins>
+      <ins class="buttonPlaceholder"></ins>
+      <ins class="button" onClick="sendButtonPress('chmiddle', 'Channel');"><i class="fas fa-circle-notch"></i><span>CH</span></ins>
+    </div>
+
+    <div class="row">
+      <ins class="button" onClick="sendButtonPress('volminus', 'Volume Down');"><i class="fas fa-volume-down"></i><span>Vol -</span></ins>
+      <ins class="buttonPlaceholder"></ins>
+      <ins class="button" onClick="sendButtonPress('chminus', 'Ch -');"><i class="fas fa-minus"></i><span>CH -</span></ins>
+    </div>
+
+  </div>
+
+  <div class="display" id="display">
+    <!-- display msg here -->
+  </div>
+
+  <div id="footer">WiFi Remote<br>Sasa Karanovic 2020</div>
+</div>
+
+
+    <script src="script.js" type="text/javascript"></script>
+  </body>
+</html>
