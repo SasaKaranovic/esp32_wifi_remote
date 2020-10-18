@@ -14,5 +14,5 @@ Complete how-to guide and a detailed walktrough is available at [YouTube](https:
 
 - `/Arduino/IR_Receiver` -> Arduino sketches used to read codes from your IR remote
 - `/Arduino/WiFi_Remote` -> Arduino sketches for creating a WiFi remote
-
+- `/Arduino/WiFi_Remote/data` -> Web page data to be served once we open WiFi remote IP address in our browser
 
