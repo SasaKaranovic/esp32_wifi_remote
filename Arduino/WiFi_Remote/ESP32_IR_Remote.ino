@@ -33,11 +33,14 @@ void debugInit()
 void connectToWiFi()
 {
   Serial.printf("Connecting to WiFi %s\n", ssid);
-  // WiFi.config(staticIP, gateway, subnet);
+
+  // Configure WiFi and wait for connection
   WiFi.begin(ssid, password);
   while (WiFi.status() != WL_CONNECTED) {
     delay(500);
   }
+
+  // Print our IP and MAC address on serial port
   Serial.println(WiFi.localIP());
   Serial.println(WiFi.macAddress());
 }
@@ -51,6 +54,8 @@ void onFileUpload(AsyncWebServerRequest *request, const String& filename, size_t
     // dummy callback function signature, not in used in our code
 }
 
+// This is the main function that will receive request from the webpage when button is pressed
+// and then based on the data that is sent, decide what should be done
 void onBody(AsyncWebServerRequest *request, uint8_t *data, size_t len, size_t index, size_t total)
 {
   DeserializationError error = deserializeJson(doc, (char*)data);
@@ -198,6 +203,7 @@ void onBody(AsyncWebServerRequest *request, uint8_t *data, size_t len, size_t in
       Serial.println("Don't recognize cmd");
     }
 
+    // Return HTTP 200 code (success) to the client
     request->send(200, "text/plain", "Ok");
   }
 }
@@ -208,7 +214,6 @@ void setup()
   connectToWiFi();  // Connect to WiFi
 
   
-  // IrSender.sendSAMSUNG(RemoteCodes.btnOnOff, RemoteCodes.codeLen);
   // Initialize SPIFFS (SPI Flash File System)
   SPIFFS.begin(true);
 
@@ -217,12 +222,15 @@ void setup()
         .setDefaultFile("index.html")
         .setCacheControl("max-age=86400");
 
+  // Which functions to use for processing the /api requests
   server.on("/api", HTTP_POST, onRequest, onFileUpload, onBody);
 
+  // What to do when page does not exist
   server.onNotFound([](AsyncWebServerRequest *request){
       request->send(404, "text/plain", "Page Not Found");
   });
 
+  // Start the server
   server.begin();
 
   
@@ -230,6 +238,10 @@ void setup()
 
 void loop()
 {
+  // If we are waiting to send IR code
+  // send it and clear the flag.
+  // Sending from the main loop is recommended instead from an interrupt (onBody function),
+  // although I tested both of them and they both worked fine.
   if(IRpending)
   {
     IrSender.sendSAMSUNG(IRcmd, IRlen);
