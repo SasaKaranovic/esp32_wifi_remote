@@ -1,9 +1,9 @@
 #include <Arduino.h>
 #include <WiFi.h>
-#include <ESPAsyncWebServer.h>
+#include <ESPAsyncWebServer.h>  // https://github.com/me-no-dev/ESPAsyncWebServer
 #include <SPIFFS.h>
-#include <ArduinoJson.h>
-#include <IRremote.h>
+#include <ArduinoJson.h>        // https://arduinojson.org/v6/doc/installation/
+#include <IRremote.h>           // https://www.arduino.cc/reference/en/libraries/irremote/
 #include "security.h"
 #include "IRCodes.h"
 
